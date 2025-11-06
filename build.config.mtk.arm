@@ -1,5 +1,5 @@
 ARCH=arm
-CLANG_TRIPLE=arm-linux-gnueabi-
+# CLANG_TRIPLE=arm-linux-gnueabi-
 CROSS_COMPILE=arm-linux-androidkernel-
 CC=clang
 LD=ld.lld

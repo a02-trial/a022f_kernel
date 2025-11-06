@@ -1,7 +1,7 @@
 . ${ROOT_DIR}/${KERNEL_DIR}/build.config.mtk.arm
 
 DEFCONFIG="vendor/a02_defconfig"
-KERNEL_DIR="mt6739"
+KERNEL_DIR="common"
 KMI_GENERATION=2
 CC=clang
 LD=ld.lld

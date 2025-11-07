@@ -1,16 +1,11 @@
-. ${ROOT_DIR}/${KERNEL_DIR}/build.config.mtk.arm
-
-DEFCONFIG="vendor/a02_defconfig"
-KERNEL_DIR="common"
-KMI_GENERATION=2
+ARCH=arm
+CROSS_COMPILE=arm-linux-gnueabi- 
+CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
+CROSS_COMPILE_ARM32=arm-linux-gnueabi-
+CLANG_TRIPLE=arm-linux-gnueabihf-
 CC=clang
 LD=ld.lld
-NM=llvm-nm
-OBJCOPY=llvm-objcopy
-CLANG_PREBUILT_BIN=prebuilts-master/clang/host/linux-x86/clang-r416183b/bin
-DEPMOD=depmod
-BUILDTOOLS_PREBUILT_BIN=build/build-tools/path/linux-x86
-
-KCFLAGS="${KCFLAGS} -D__ANDROID_COMMON_KERNEL__"
-STOP_SHIP_TRACEPRINTK=1
-IN_KERNEL_MODULES=1
+DEFCONFIG=a02_defconfig
+KERNEL_DIR=kernel-4.14
+CLANG_PREBUILT_BIN=toolchain/clang/host/linux-x86/clang-r383902/bin
+LINUX_GCC_CROSS_COMPILE_PREBUILTS_BIN=prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin

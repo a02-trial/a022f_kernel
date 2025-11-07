@@ -1,9 +1,11 @@
 ARCH=arm
-# CLANG_TRIPLE=arm-linux-gnueabi-
-CROSS_COMPILE=arm-linux-androidkernel-
+CROSS_COMPILE=arm-linux-gnueabi- 
+CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
+CROSS_COMPILE_ARM32=arm-linux-gnueabi-
+CLANG_TRIPLE=arm-linux-gnueabihf-
 CC=clang
 LD=ld.lld
-# DEFCONFIG=defconfig
+DEFCONFIG=a02_defconfig
 KERNEL_DIR=kernel-4.14
-CLANG_PREBUILT_BIN=prebuilts/clang/host/linux-x86/clang-r383902/bin
+CLANG_PREBUILT_BIN=toolchain/clang/host/linux-x86/clang-r383902/bin
 LINUX_GCC_CROSS_COMPILE_PREBUILTS_BIN=prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin

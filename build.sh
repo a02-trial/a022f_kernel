@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export CROSS_COMPILE=$(pwd)/toolchain/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9-lineage-19.1/bin/arm-linux-androidkernel-
+export CC=$(pwd)/toolchain/clang/host/linux-x86/clang-r383902/bin/clang
+export CLANG_TRIPLE=arm-linux-gnueabihf-
+export ARCH=arm
+export ANDROID_MAJOR_VERSION=r
+
+export KCFLAGS=-w
+export CONFIG_SECTION_MISMATCH_WARN_ONLY=y
+
+make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y a02_defconfig
+make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y -j16
+
+cp out/arch/arm/boot/Image $(pwd)/arch/arm/boot/Image
+cp out/arch/arm/boot/Image $(pwd)/arch/arm64/boot/Image

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <remote name="aosp"
+            fetch="https://android.googlesource.com"
+            review="https://android-review.googlesource.com/"/>
+    <remote name="github"
+            fetch="https://github.com" />
+    <default revision="master-kernel-build-2021"
+             remote="aosp"
+             sync-j="8"/>
+
+    <superproject name="kernel/superproject" remote="aosp" revision="common-android-4.14-stable" />
+    
+    <project path="build" name="a02-trial/a022f_kernel" remote="github" revision="main">
+        <linkfile src="build_kernel.sh" dest="build.sh"/>
+        <linkfile src="build.config.mt6739" dest="build.config"/>
+    </project>
+    
+    <project path="manifest" name="a02-trial/platform_manifest_twrp_aosp" remote="github" revision="tw11" />
+
+    <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" />
+    <project path="kernel/tests" name="kernel/tests" />
+    <project path="kernel/configs" name="kernel/configs" />
+    <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" revision="android11-release" clone-depth="1" />
+    <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" />
+    <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
+    <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" />
+    
+    <project path="AnyKernel3" name="ghostrider-reborn/AnyKernel3" remote="github" revision="permissiver" />
+</manifest>

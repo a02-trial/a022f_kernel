@@ -1,6 +1,6 @@
 ARCH=arm
 
-CLANG_TRIPLE=arm-linux-gnueabihf-
+# CLANG_TRIPLE=arm-linux-gnueabihf-
 CROSS_COMPILE=arm-linux-androidkernel-
 LINUX_GCC_CROSS_COMPILE_PREBUILTS_BIN=toolchain/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9-lineage-19.1/bin
 

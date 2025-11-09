@@ -1,11 +1,15 @@
-ARCH=arm
-CROSS_COMPILE=arm-linux-androideabi- 
-CROSS_COMPILE_COMPAT=arm-linux-androideabi-
-CROSS_COMPILE_ARM32=arm-linux-androideabi-
-# CLANG_TRIPLE=armv7a-linux-gnueabihf-
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.common
+
+DEFCONFIG="a02_defconfig"
+KERNEL_DIR="kernel-4.14"
 CC=clang
 LD=ld.lld
-DEFCONFIG=a02_defconfig
-KERNEL_DIR=kernel-4.14
-CLANG_PREBUILT_BIN=toolchain/clang/host/linux-x86/clang-r383902/bin
-LINUX_GCC_CROSS_COMPILE_PREBUILTS_BIN=prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9-lineage-19.1/bin
+NM=llvm-nm
+OBJCOPY=llvm-objcopy
+CLANG_PREBUILT_BIN=prebuilts-master/clang/host/linux-x86/clang-r416183b/bin
+DEPMOD=depmod
+BUILDTOOLS_PREBUILT_BIN=build/build-tools/path/linux-x86
+
+KCFLAGS="${KCFLAGS} -D__ANDROID_COMMON_KERNEL__"
+STOP_SHIP_TRACEPRINTK=1
+IN_KERNEL_MODULES=1

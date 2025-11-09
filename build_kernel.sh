@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export CROSS_COMPILE=$(pwd)/toolchain/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9-lineage-19.1/bin/arm-linux-androidkernel-
+export CROSS_COMPILE=$(pwd)/toolchain/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9-lineage-19.1/bin/arm-linux-androideabi-
 export CC=$(pwd)/toolchain/clang/host/linux-x86/clang-r383902/bin/clang
-export CLANG_TRIPLE=arm-linux-gnueabihf-
+export CLANG_TRIPLE=armv7a-linux-gnueabihf-
 export ARCH=arm
 export ANDROID_MAJOR_VERSION=r
 

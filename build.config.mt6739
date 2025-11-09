@@ -1,7 +1,7 @@
 . ${ROOT_DIR}/${KERNEL_DIR}/build.config.arm
 
-DEFCONFIG="a02_defconfig"
-KERNEL_DIR="kernel-4.14"
+DEFCONFIG=a02_defconfig
+KERNEL_DIR=kernel-4.14
 CC=clang
 LD=ld.lld
 NM=llvm-nm

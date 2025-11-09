@@ -1,4 +1,4 @@
-. ${ROOT_DIR}/${KERNEL_DIR}/build.config.common
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.mtk.arm
 
 DEFCONFIG="a02_defconfig"
 KERNEL_DIR="kernel-4.14"

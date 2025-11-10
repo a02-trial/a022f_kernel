@@ -1235,7 +1235,7 @@ endif
 clang-specific-configs := LTO_CLANG CFI_CLANG SHADOW_CALL_STACK INIT_STACK_ALL
 
 PHONY += check-clang-specific-options
-check-clang-specific-options: $(KCONFIG_CONFIG) FORCE
+check-clang-specific-options: arch/arm/configs/a02_defconfig FORCE
 ifneq ($(cc-name),clang)
 ifneq ($(findstring y,$(shell $(CONFIG_SHELL) \
 	$(srctree)/scripts/config --file $(KCONFIG_CONFIG) \

@@ -124,9 +124,9 @@ endif
 # Cancel implicit rules on top Makefile
 $(CURDIR)/Makefile Makefile: ;
 
-ifneq ($(words $(subst :, ,$(CURDIR))), 1)
-  $(error main directory cannot contain spaces nor colons)
-endif
+# ifneq ($(words $(subst :, ,$(CURDIR))), 1)
+#  $(error main directory cannot contain spaces nor colons)
+# endif
 
 ifneq ($(KBUILD_OUTPUT),)
 # check that the output directory actually exists

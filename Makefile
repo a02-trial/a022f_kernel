@@ -579,7 +579,7 @@ ifeq ($(KBUILD_EXTMOD),)
 PHONY += scripts
 scripts: scripts_basic include/config/auto.conf include/config/tristate.conf \
 	 asm-generic gcc-plugins
-	$(Q)$(MAKE) $(build)=$(@)
+#	$(Q)$(MAKE) $(build)=$(@)
 
 # Objects we will link into vmlinux / subdirs we need to visit
 init-y		:= init/

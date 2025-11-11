@@ -94,8 +94,8 @@ head-y			:= head$(MMUEXT).c
 obj-$(CONFIG_DEBUG_LL)	+= debug.c
 obj-$(CONFIG_EARLY_PRINTK)	+= early_printk.c
 
-obj-$(CONFIG_ARM_VIRT_EXT)	+= hyp-stub.c
-AFLAGS_hyp-stub.c		:=-Wa,-march=armv7-a
+obj-$(CONFIG_ARM_VIRT_EXT)	+= hyp-stub.S
+AFLAGS_hyp-stub.S		:=-Wa,-march=armv7-a
 ifeq ($(CONFIG_ARM_PSCI),y)
 obj-$(CONFIG_SMP)		+= psci_smp.c
 endif

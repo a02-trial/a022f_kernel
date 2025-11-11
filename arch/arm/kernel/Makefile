@@ -100,6 +100,6 @@ ifeq ($(CONFIG_ARM_PSCI),y)
 obj-$(CONFIG_SMP)		+= psci_smp.c
 endif
 
-obj-$(CONFIG_HAVE_ARM_SMCCC)	+= smccc-call.c
+obj-$(CONFIG_HAVE_ARM_SMCCC)	+= smccc-call.S
 
 extra-y := $(head-y) vmlinux.lds

@@ -5,7 +5,7 @@
 
 obj-y				:= extable.o fault.o init.c iomap.c
 obj-y				+= dma-mapping$(MMUEXT).c
-obj-$(CONFIG_MMU)		+= fault-armv.o flush.o idmap.o ioremap.o \
+obj-$(CONFIG_MMU)		+= fault-armv.o flush.c idmap.o ioremap.o \
 				   mmap.o pgd.o mmu.o pageattr.o
 
 ifneq ($(CONFIG_MMU),y)

@@ -4,7 +4,7 @@
 #
 
 CPPFLAGS_vmlinux.lds := -DTEXT_OFFSET=$(TEXT_OFFSET)
-AFLAGS_head.S        := -DTEXT_OFFSET=$(TEXT_OFFSET)
+AFLAGS_head.c        := -DTEXT_OFFSET=$(TEXT_OFFSET)
 
 ifdef CONFIG_FUNCTION_TRACER
 CFLAGS_REMOVE_ftrace.o = -pg

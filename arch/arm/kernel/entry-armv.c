@@ -1,5 +1,5 @@
 /*
- *  linux/arch/arm/kernel/entry-armv.o
+ *  linux/arch/arm/kernel/entry-armv.c
  *
  *  Copyright (C) 1996,1997,1998 Russell King.
  *  ARM700 fix by Matthew Godbolt (linux-user@willothewisp.demon.co.uk)

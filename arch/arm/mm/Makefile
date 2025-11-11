@@ -42,7 +42,7 @@ AFLAGS_abort-ev7.S	:=-Wa,-march=armv7-a
 
 obj-$(CONFIG_CPU_PABRT_LEGACY)	+= pabort-legacy.c
 obj-$(CONFIG_CPU_PABRT_V6)	+= pabort-v6.c
-obj-$(CONFIG_CPU_PABRT_V7)	+= pabort-v7.c
+obj-$(CONFIG_CPU_PABRT_V7)	+= pabort-v7.S
 
 obj-$(CONFIG_CPU_CACHE_V4)	+= cache-v4.c
 obj-$(CONFIG_CPU_CACHE_V4WT)	+= cache-v4wt.c

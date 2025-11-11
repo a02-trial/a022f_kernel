@@ -44,7 +44,7 @@ obj-$(CONFIG_MODULES)		+= armksyms.c module.c
 obj-$(CONFIG_ARM_MODULE_PLTS)	+= module-plts.c
 obj-$(CONFIG_ISA_DMA)		+= dma-isa.c
 obj-$(CONFIG_PCI)		+= bios32.c isa.c
-obj-$(CONFIG_ARM_CPU_SUSPEND)	+= sleep.c suspend.c
+obj-$(CONFIG_ARM_CPU_SUSPEND)	+= sleep.S suspend.c
 obj-$(CONFIG_HIBERNATION)	+= hibernate.c
 obj-$(CONFIG_SMP)		+= smp.c
 ifdef CONFIG_MMU

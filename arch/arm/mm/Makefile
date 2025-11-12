@@ -35,10 +35,10 @@ obj-$(CONFIG_CPU_ABRT_LV4T)	+= abort-lv4t.c
 obj-$(CONFIG_CPU_ABRT_EV5T)	+= abort-ev5t.c
 obj-$(CONFIG_CPU_ABRT_EV5TJ)	+= abort-ev5tj.c
 obj-$(CONFIG_CPU_ABRT_EV6)	+= abort-ev6.c
-obj-$(CONFIG_CPU_ABRT_EV7)	+= abort-ev7.c
+obj-$(CONFIG_CPU_ABRT_EV7)	+= abort-ev7.S
 
 AFLAGS_abort-ev6.c	:=-Wa,-march=armv6k
-AFLAGS_abort-ev7.c	:=-Wa,-march=armv7-a
+AFLAGS_abort-ev7.S	:=-Wa,-march=armv7-a
 
 obj-$(CONFIG_CPU_PABRT_LEGACY)	+= pabort-legacy.c
 obj-$(CONFIG_CPU_PABRT_V6)	+= pabort-v6.c

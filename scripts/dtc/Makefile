@@ -4,7 +4,7 @@
 hostprogs-y	:= dtc
 always		:= $(hostprogs-y)
 
-dtc-objs	:= dtc.o flattree.o fstree.o data.o livetree.o treesource.o \
+dtc-objs	:= dtc.c flattree.o fstree.o data.o livetree.o treesource.o \
 		   srcpos.o checks.o util.o
 dtc-objs	+= dtc-lexer.lex.o dtc-parser.tab.o
 
@@ -14,7 +14,7 @@ HOSTCFLAGS_DTC := -I$(src) -I$(src)/libfdt
 
 HOSTCFLAGS_checks.o := $(HOSTCFLAGS_DTC)
 HOSTCFLAGS_data.o := $(HOSTCFLAGS_DTC)
-HOSTCFLAGS_dtc.o := $(HOSTCFLAGS_DTC)
+HOSTCFLAGS_dtc.c := $(HOSTCFLAGS_DTC)
 HOSTCFLAGS_flattree.o := $(HOSTCFLAGS_DTC)
 HOSTCFLAGS_fstree.o := $(HOSTCFLAGS_DTC)
 HOSTCFLAGS_livetree.o := $(HOSTCFLAGS_DTC)

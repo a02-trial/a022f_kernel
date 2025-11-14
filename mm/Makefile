@@ -41,7 +41,7 @@ endif
 
 obj-y			:= filemap.o mempool.o oom_kill.o \
 			   maccess.o page_alloc.o page-writeback.c \
-			   readahead.o swap.o truncate.o vmscan.c shmem.o \
+			   readahead.o swap.o truncate.o vmscan.c shmem.c \
 			   util.o mmzone.o vmstat.o backing-dev.o \
 			   mm_init.o mmu_context.o percpu.o slab_common.o \
 			   compaction.o vmacache.o swap_slots.o \

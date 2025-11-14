@@ -103,11 +103,11 @@ obj-$(CONFIG_CPU_MOHAWK)	+= proc-mohawk.o
 obj-$(CONFIG_CPU_FEROCEON)	+= proc-feroceon.o
 obj-$(CONFIG_CPU_V6)		+= proc-v6.o
 obj-$(CONFIG_CPU_V6K)		+= proc-v6.o
-obj-$(CONFIG_CPU_V7)		+= proc-v7.o proc-v7-bugs.o
-obj-$(CONFIG_CPU_V7M)		+= proc-v7m.o
+obj-$(CONFIG_CPU_V7)		+= proc-v7.S proc-v7-bugs.c
+obj-$(CONFIG_CPU_V7M)		+= proc-v7m.S
 
 AFLAGS_proc-v6.o	:=-Wa,-march=armv6
-AFLAGS_proc-v7.o	:=-Wa,-march=armv7-a
+AFLAGS_proc-v7.S	:=-Wa,-march=armv7-a
 
 obj-$(CONFIG_OUTER_CACHE)	+= l2c-common.o
 obj-$(CONFIG_CACHE_FEROCEON_L2)	+= cache-feroceon-l2.o

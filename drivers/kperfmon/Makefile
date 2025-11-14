@@ -36,10 +36,10 @@ endif
 #$(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../../system/core/liblog/include/log/perflog.h  $(srctree)/include/linux/)")
 #$(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../system/core/liblog/include/log/perflog.h  $(srctree)/include/linux/)")
 
-ifneq ($(shell [ -e $(srctree)/include/linux/perflog.h ] && echo exist), exist)
-FLAG=0
-$(info kperfmon_DUMMY="perflog.h file is missing.")
-endif
+#ifneq ($(shell [ -e $(srctree)/include/linux/perflog.h ] && echo exist), exist)
+#FLAG=0
+#$(info kperfmon_DUMMY="perflog.h file is missing.")
+#endif
 
 ifeq ($(FLAG), 1)
 $(info kperfmon_DUMMY="$(shell cp -f $(srctree)/drivers/kperfmon/ologk.h $(srctree)/include/linux/)")

@@ -1,0 +1,30 @@
+# Define Architecture and Sub-architecture
+ARCH ?= arm
+
+# Define Cross-Compiler Toolchain
+# Replace with your actual toolchain path and prefix
+CROSS_COMPILE ?= ./toolchain/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9-lineage-19.1/bin/arm-linux-androideabi-
+
+# Output directory for compiled kernel and modules
+OUT_DIR ?= out
+
+# Kernel configuration file (e.g., defconfig for your device)
+# Replace 'your_device_defconfig' with the actual defconfig name
+DEFCONFIG ?= a02_defconfig
+
+.PHONY: all clean kernel modules defconfig
+
+all: kernel modules
+
+kernel: defconfig
+	$(MAKE) -C $(CURDIR) O=$(OUT_DIR) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) Image dtbs
+
+modules:
+	$(MAKE) -C $(CURDIR) O=$(OUT_DIR) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) modules
+
+defconfig:
+	$(MAKE) -C $(CURDIR) O=$(OUT_DIR) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) $(DEFCONFIG)
+
+clean:
+	$(MAKE) -C $(CURDIR) O=$(OUT_DIR) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) clean
+	rm -rf $(OUT_DIR)

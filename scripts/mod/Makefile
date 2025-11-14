@@ -7,12 +7,12 @@ always		:= $(hostprogs-y) empty.c
 
 modpost-objs	:= modpost.o file2alias.o sumversion.o
 
-devicetable-offsets-file := devicetable-offsets.h
+devicetable-offsets-file := devicetable-offsets.c
 
-$(obj)/$(devicetable-offsets-file): $(obj)/devicetable-offsets.s FORCE
+$(obj)/$(devicetable-offsets-file): $(obj)/devicetable-offsets.c FORCE
 	$(call filechk,offsets,__DEVICETABLE_OFFSETS_H__)
 
-targets += $(devicetable-offsets-file) devicetable-offsets.s
+targets += $(devicetable-offsets-file) devicetable-offsets.c
 
 # dependencies on generated files need to be listed explicitly
 

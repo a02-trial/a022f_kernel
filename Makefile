@@ -311,7 +311,7 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 ARCH		?=arm
-CROSS_COMPILE	?= $(srctree)/toolchain/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androidkernel-
+CROSS_COMPILE	?= $(srctree)/toolchain/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9-lineage-19.1/bin/arm-linux-androidkernel-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)

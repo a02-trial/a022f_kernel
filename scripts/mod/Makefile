@@ -10,7 +10,7 @@ modpost-objs	:= modpost.o file2alias.o sumversion.o
 devicetable-offsets-file := devicetable-offsets.c
 
 $(obj)/$(devicetable-offsets-file): $(obj)/devicetable-offsets.c FORCE
-	$(call filechk,offsets,__DEVICETABLE_OFFSETS_H__)
+	$(call filechk,offsets,__DEVICETABLE_OFFSETS_C__)
 
 targets += $(devicetable-offsets-file) devicetable-offsets.c
 

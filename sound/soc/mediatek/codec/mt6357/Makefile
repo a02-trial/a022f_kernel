@@ -1,2 +1,2 @@
 # PMIC object
-obj-y += mtk-soc-codec-6357.o mtk-auddrv-ana.o
+obj-y += mtk-soc-codec-6357.c mtk-auddrv-ana.c

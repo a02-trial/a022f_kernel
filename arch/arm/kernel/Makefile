@@ -81,7 +81,7 @@ obj-$(CONFIG_PERF_EVENTS)	+= perf_regs.o perf_callchain.o
 obj-$(CONFIG_HW_PERF_EVENTS)	+= perf_event_xscale.o perf_event_v6.o \
 				   perf_event_v7.o
 AFLAGS_iwmmxt.o			:= -Wa,-mcpu=iwmmxt
-obj-$(CONFIG_ARM_CPU_TOPOLOGY)  += topology.o
+obj-$(CONFIG_ARM_CPU_TOPOLOGY)  += topology.c
 obj-$(CONFIG_VDSO)		+= vdso.o
 obj-$(CONFIG_EFI)		+= efi.o
 

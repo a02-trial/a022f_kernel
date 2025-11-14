@@ -58,7 +58,7 @@ mkdir $cpio_dir
 pushd $srctree > /dev/null
 for f in $dir_list;
 	do find "$f" -name "*.h";
-done | $cpio --quiet -pd $cpio_dir
+done | $cpio --quiet -pdu $cpio_dir >/dev/null 2>&1
 popd > /dev/null
 
 # The second CPIO can complain if files already exist which can

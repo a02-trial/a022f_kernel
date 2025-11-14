@@ -8,7 +8,7 @@ ccflags-y := -I$(srctree)/security/selinux -I$(srctree)/security/selinux/include
 
 ifeq ($(TARGET_BUILD_VARIANT), eng)
 ifeq ($(SEC_BUILD_OPTION_PRODUCT_SHIP), false)
-ifeq ($(SEC_BUILD_OPTION_SELINUX_ENFORCE),true)
+ifeq ($(SEC_BUILD_OPTION_SELINUX_ENFORCE),false)
 ccflags-y += -DSEC_SELINUX_DEBUG
 endif
 endif
@@ -16,9 +16,9 @@ endif
 
 ifeq ($(SEC_BUILD_OPTION_VTS),false)
 ifeq ($(TARGET_BUILD_VARIANT), user)
-ifeq ($(SEC_BUILD_OPTION_PRODUCT_SHIP), true)
-ifeq ($(SEC_BUILD_OPTION_SELINUX_ENFORCE),true)
-ccflags-y += -DCONFIG_ALWAYS_ENFORCE=true
+ifeq ($(SEC_BUILD_OPTION_PRODUCT_SHIP), false)
+ifeq ($(SEC_BUILD_OPTION_SELINUX_ENFORCE),false)
+ccflags-y += -DCONFIG_ALWAYS_ENFORCE=false
 endif
 endif
 endif

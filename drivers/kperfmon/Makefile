@@ -24,8 +24,8 @@ $(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../vendor/samsung/system/libperf
 $(info kperfmon_DUMMY="$(shell chmod 777 $(srctree)/drivers/kperfmon/aprotoc)")
 $(info kperfmon_DUMMY="$(shell $(srctree)/drivers/kperfmon/aprotoc --perflog_out=./  $(srctree)/drivers/kperfmon/olog.proto)")
 $(info kperfmon_DUMMY="$(shell cp -f $(srctree)/drivers/kperfmon/olog.pb.h  $(srctree)/include/linux/)")
-#$(info kperfmon_DUMMY="$(shell ls $(srctree)/drivers/kperfmon/*)")
-#$(info kperfmon_DUMMY="$(shell ls $(srctree)/include/linux/olog*)")
+$(info kperfmon_DUMMY="$(shell ls $(srctree)/drivers/kperfmon/*)")
+$(info kperfmon_DUMMY="$(shell ls $(srctree)/include/linux/olog*)")
 
 ifneq ($(shell [ -e $(srctree)/include/linux/olog.pb.h ] && echo exist), exist)
 $(info kperfmon_DUMMY="olog.pb.h file is missing... again")
@@ -33,8 +33,8 @@ FLAG=0
 endif
 endif
 
-$(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../../system/core/liblog/include/log/perflog.h  $(srctree)/include/linux/)")
-$(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../system/core/liblog/include/log/perflog.h  $(srctree)/include/linux/)")
+#$(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../../system/core/liblog/include/log/perflog.h  $(srctree)/include/linux/)")
+#$(info kperfmon_DUMMY="$(shell cp -f $(srctree)/../system/core/liblog/include/log/perflog.h  $(srctree)/include/linux/)")
 
 ifneq ($(shell [ -e $(srctree)/include/linux/perflog.h ] && echo exist), exist)
 FLAG=0
@@ -43,8 +43,8 @@ endif
 
 ifeq ($(FLAG), 1)
 $(info kperfmon_DUMMY="$(shell cp -f $(srctree)/drivers/kperfmon/ologk.h $(srctree)/include/linux/)")
-	obj-y		+= kperfmon.o
+	obj-y		+= kperfmon.c
 else
-	obj-y		+= ologk.o
+	obj-y		+= ologk.c
 #$(info kperfmon_DUMMY="$(shell cp -f $(srctree)/drivers/kperfmon/ologk.h $(srctree)/include/linux/)")
 endif
